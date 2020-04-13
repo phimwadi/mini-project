@@ -1,4 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 import {
   MDBContainer,
   MDBRow,
@@ -11,7 +14,19 @@ import {
   MDBBtn
 } from "mdbreact";
 
-const Login = () => {
+class Login extends Component{
+    constructor(props){
+
+        super(props)
+        
+        this.state = {
+            email: "",
+            password: ""
+        }
+    }
+
+
+    render(){
   return (
     <MDBContainer>
       <MDBRow>
@@ -33,6 +48,7 @@ const Login = () => {
                 type="email"
                 id="defaultFormEmailEx"
                 className="form-control"
+                value={this.state.email}
               />
 
               <label
@@ -45,6 +61,7 @@ const Login = () => {
                 type="password"
                 id="defaultFormPasswordEx"
                 className="form-control"
+                value={this.state.password}
               />
 
               <div className="text-center mt-4">
@@ -66,5 +83,6 @@ const Login = () => {
     </MDBContainer>
   );
 };
+}
 
 export default Login;
