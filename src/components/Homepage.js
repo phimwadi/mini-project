@@ -12,7 +12,7 @@ const Homepage =() => {
             Home page
             <div>
             <button onClick={logout}>Log Out </button>
-        </div>
+            </div>
         </div>
         
     )
