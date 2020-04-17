@@ -29,7 +29,7 @@ class Homepage extends React.Component {
             <Router>
               <MDBNavbar color="bg-primary" fixed="top" dark expand="md" scrolling transparent>
                 <MDBNavbarBrand href="/">
-                  <strong>Navbar</strong>
+                  <strong>ReadMe PHUKET</strong>
                 </MDBNavbarBrand>
                 {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
                 <MDBCollapse isOpen={this.state.collapse} navbar>
@@ -38,10 +38,10 @@ class Homepage extends React.Component {
                       <MDBNavLink to="#">Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="#">Link</MDBNavLink>
+                      <MDBNavLink to="#">Restaurant</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="#">Profile</MDBNavLink>
+                      <MDBNavLink to="#">Landmark</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="#">Logout</MDBNavLink>
