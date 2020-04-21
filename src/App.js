@@ -7,6 +7,9 @@ import "mdbreact/dist/css/mdb.css";
 import { auth } from 'firebase';
 import Config from './config/Config';
 import Homepage from './components/Homepage';
+import Review from './components/Review';
+import { Route } from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 
 
 class App extends Component{
@@ -40,14 +43,20 @@ class App extends Component{
     return(
       <div>
         <Login/>
-        
         </div>
       
     );
     }
     return(
       <div>
-        <Homepage/>
+        <div>
+        <BrowserRouter>
+          <Route exact path="/" component={Homepage} />
+          
+          <Route path="/Review" component={Review} />
+          <Route path="/login" component={Login} />
+          </BrowserRouter>
+        </div>
       </div>
     )
   }
