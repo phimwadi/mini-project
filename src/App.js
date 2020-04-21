@@ -8,6 +8,7 @@ import { auth } from 'firebase';
 import Config from './config/Config';
 import Homepage from './components/Homepage';
 
+
 class App extends Component{
   constructor(props){
     super(props)
@@ -39,6 +40,7 @@ class App extends Component{
     return(
       <div>
         <Login/>
+        
         </div>
       
     );
