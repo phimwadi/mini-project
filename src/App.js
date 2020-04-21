@@ -10,6 +10,7 @@ import Homepage from './components/Homepage';
 import Review from './components/Review';
 import { Route } from 'react-router-dom'
 import {BrowserRouter} from 'react-router-dom'
+import Restaurant from './components/Restaurant';
 
 
 class App extends Component{
@@ -52,7 +53,7 @@ class App extends Component{
         <div>
         <BrowserRouter>
           <Route exact path="/" component={Homepage} />
-          
+          <Route path="/Restaurant" component={Restaurant}/>
           <Route path="/Review" component={Review} />
           <Route path="/login" component={Login} />
           </BrowserRouter>

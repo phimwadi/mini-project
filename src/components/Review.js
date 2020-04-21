@@ -7,32 +7,21 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 're
 import classnames from 'classnames';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { firestore } from '../index'
-import AppBar from '@material-ui/core/AppBar';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import Edit from './components/Edit'
+import Edit from './Edit'
 
 
  const Review = props => {
 
     const [id,setId] = useState(0)
-    const [imgUrl1, SetImgUrl1] = useState('')
-    const [productName, SetProductName] = useState('')
-    const [price, SetPrice] = useState('')
-    const [detail, SetDetail] = useState('')
-    const [nameUser, setNameUser] = useState('')
+    const [imgUrl1, setImgUrl1] = useState('')
+    const [menuName, setMenuName] = useState('')
+    const [time, setTime] = useState('')
+    const [price, setPrice] = useState('')
+    const [landmark, setLandmark] = useState('')
     const [telephone, setTelephone] = useState('')
     const [facebook, setFacebook] = useState('')
-    const [line, setLine] = useState('')
+    const [view, setView] = useState('')
+    const [detail, setDetail] = useState('')
     const [edit, SetEdit] = useState([{}])
 
     useEffect(() => {
@@ -48,9 +37,9 @@ import Edit from './components/Edit'
             console.log(snapshot);
 
             let myEdit = snapshot.docs.map(d => {
-                const { id, imgUrl1, productName, price, detail,  nameUser, telephone, facebook, line } = d.data()
-                console.log(id, imgUrl1, productName, price, detail,  nameUser, telephone, facebook, line)
-                return {id, imgUrl1, productName, price, detail,  nameUser, telephone, facebook, line}
+                const { id, imgUrl1, menuName, time, price,  landmark, telephone, facebook,  view, detail } = d.data()
+                console.log(id, imgUrl1, menuName, time, price,  landmark, telephone, facebook,  view, detail)
+                return {id, imgUrl1, menuName, time, price,  landmark, telephone, facebook,  view, detail}
             })
 
             SetEdit(myEdit)
@@ -82,7 +71,7 @@ import Edit from './components/Edit'
     const addEdit = () => {
 
         let id = (edit.length === 0) ? 1 : edit[edit.length - 1].id + 1
-        firestore.collection("store").doc(id + '').set({ id, imgUrl1, productName, price, detail,  nameUser, telephone, facebook, line})
+        firestore.collection("store").doc(id + '').set({ id, imgUrl1, menuName, time, price,  landmark, telephone, facebook,  view, detail})
         alert("You Add Finish")
     }
 
@@ -92,41 +81,7 @@ import Edit from './components/Edit'
         if (activeTab !== tab) setActiveTab(tab);
     }
 
-    const useStyles = makeStyles((theme) => ({
-        icon: {
-          marginRight: theme.spacing(2),
-        },
-        heroContent: {
-          backgroundColor: theme.palette.background.paper,
-          padding: theme.spacing(8, 0, 6),
-        },
-        heroButtons: {
-          marginTop: theme.spacing(4),
-        },
-        cardGrid: {
-          paddingTop: theme.spacing(8),
-          paddingBottom: theme.spacing(8),
-        },
-        card: {
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-        },
-        cardMedia: {
-          paddingTop: '56.25%', // 16:9
-        },
-        cardContent: {
-          flexGrow: 1,
-        },
-        footer: {
-          backgroundColor: theme.palette.background.paper,
-          padding: theme.spacing(6),
-        },
-      }));
-      
-      
-      
-      const classes = useStyles();
+    
 
 
         return (
@@ -134,7 +89,7 @@ import Edit from './components/Edit'
                 
                 <MDBNavbar color="cyan" dark expand="md">
                     <MDBNavbarBrand>
-                        <strong className="white-text">กรอกข้อมูลสินค้า</strong>
+                        <strong className="white-text">กรอกข้อมูลร้านอาหาร</strong>
                     </MDBNavbarBrand>
                 </MDBNavbar>
                 
@@ -153,70 +108,80 @@ import Edit from './components/Edit'
                                                     name="imgUrl1"
                                                     className="form-control"
                                                     id="imgUrl1"
-                                                    onChange={(e) => SetImgUrl1(e.target.value)} 
+                                                    onChange={(e) => setImgUrl1(e.target.value)} 
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="imgUrl2">PRODUCT NAME</label>
-                                                <input type="text"
-                                                    name="imgUrl2"
-                                                    className="form-control"
-                                                    id="imgUrl2"
-                                                    onChange={(e) => SetProductName(e.target.value)} 
-                                                />
-                                            </div>
-                                            <div className="form-group">
-                                                <label htmlFor="imgUrl3">PRICE</label>
-                                                <input type="text"
-                                                    name="imgUrl3"
-                                                    className="form-control"
-                                                    id="imgUrl3"
-                                                    onChange={(e) => SetPrice(e.target.value)}  
-                                                />
-                                            </div>
-                                            <div className="form-group">
-                                                <label htmlFor="strain">DETAIL</label>
+                                                <label htmlFor="strain">menuName</label>
                                                 <input type="text"
                                                     name="strain"
                                                     className="form-control"
                                                     id="strain"
-                                                    onChange={(e) => SetDetail(e.target.value)} 
+                                                    onChange={(e) => setMenuName(e.target.value)} 
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="nameUser">USER NAME</label>
+                                                <label htmlFor="nameUser">time</label>
                                                 <input type="text"
                                                     name="nameUser"
                                                     className="form-control"
                                                     id="nameUser"
-                                                    onChange={(e) => setNameUser(e.target.value)}  
+                                                    onChange={(e) => setTime(e.target.value)}  
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="telephone">Telephone</label>
+                                                <label htmlFor="telephone">price</label>
                                                 <input type="text"
                                                     name="telephone"
                                                     className="form-control"
                                                     id="telephone"
-                                                    onChange={(e) => setTelephone(e.target.value)} 
+                                                    onChange={(e) => setPrice(e.target.value)} 
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="facebook">Facebook</label>
+                                                <label htmlFor="facebook">landmark</label>
                                                 <input type="text"
                                                     name="facebook"
                                                     className="form-control"
                                                     id="facebook"
-                                                    onChange={(e) => setFacebook(e.target.value)}  
+                                                    onChange={(e) => setLandmark(e.target.value)}  
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="line">Line</label>
+                                                <label htmlFor="line">telephone</label>
                                                 <input type="text"
                                                     name="line"
                                                     className="form-control"
                                                     id="line"
-                                                    onChange={(e) => setLine(e.target.value)} 
+                                                    onChange={(e) => setTelephone(e.target.value)} 
+                                            />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="line">facebook</label>
+                                                <input type="text"
+                                                    name="line"
+                                                    className="form-control"
+                                                    id="line"
+                                                    onChange={(e) => setFacebook(e.target.value)} 
+                                            />
+                                            </div>
+                                            
+                                            <div className="form-group">
+                                                <label htmlFor="line">view</label>
+                                                <input type="text"
+                                                    name="line"
+                                                    className="form-control"
+                                                    id="line"
+                                                    onChange={(e) => setView(e.target.value)} 
+                                            />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="line">detail</label>
+                                                <input type="text"
+                                                    name="line"
+                                                    className="form-control"
+                                                    id="line"
+                                                    onChange={(e) => setDetail(e.target.value)} 
                                             />
                                             </div>
                                         </form>

@@ -37,21 +37,20 @@ class Homepage extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem active>
+                  <MDBNavItem >
                     <MDBNavLink to="#">Home</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Restaurant</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Landmark</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Review Restaurant</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Review Landmark</MDBNavLink>
-                  </MDBNavItem>
+                  
+                  
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Restaurant">Restaurant</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Review">Review</a>
+                  </li>
+                  
+                  
                   <MDBNavItem>
                     <MDBNavLink to="#"
                     onClick={this.logout}>Logout</MDBNavLink>
