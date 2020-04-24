@@ -65,7 +65,7 @@ class Homepage extends React.Component {
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
               <h2>ReadMe PHUKET</h2>
               <h5>เว็บ ReadMe PHUKET นี้เป็นเว็บที่พูดถึงหรือแนะนำสถานที่ต่างๆในภูเก็ต</h5>
-              <p>โดยเนื้อหาที่แนะนำจะเป็นร้านอาหาร Top 5 ของภูเก็ต <br />ทั้งนี้เว็บนี้สามารถให้ผู้คนเข้ามารีวิวสถานที่ร่วมกันได้อีกด้วย</p><br />
+              <p>โดยเนื้อหาที่แนะนำจะเป็นร้านอาหาร  ของภูเก็ต <br />ทั้งนี้เว็บนี้สามารถให้ผู้คนเข้ามารีวิวสถานที่ร่วมกันได้อีกด้วย</p><br />
               
             </MDBMask>
           </MDBView>
