@@ -3,8 +3,10 @@ import { firestore } from '../index'
 import axios from 'axios'
 import Edit from './Edit'
 import { makeStyles } from '@material-ui/core/styles';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Topbar from './Topbar'
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+
 
 
 
@@ -65,11 +67,16 @@ const Restaurant = props => {
     
   
     return (
+      
   
       <div>
+       <Topbar/>
+       
+       
+
+       <ul className="Res">{renderEdit()}</ul>
+       
         
-        <br />
-        <ul>{renderEdit()}</ul>
       </div>
   
   

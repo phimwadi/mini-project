@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import Config from '../config/Config'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom'
+import Topbar from './Topbar'
 
 
 class Homepage extends React.Component {
@@ -37,9 +38,9 @@ class Homepage extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem >
-                    <MDBNavLink to="#">Home</MDBNavLink>
-                  </MDBNavItem>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
                   
                   
                   
