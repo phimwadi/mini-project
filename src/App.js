@@ -4,7 +4,6 @@ import Login from './components/Login';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { auth } from 'firebase';
 import Config from './config/Config';
 import Homepage from './components/Homepage';
 import Review from './components/Review';

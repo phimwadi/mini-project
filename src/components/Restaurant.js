@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { firestore } from '../index'
-import axios from 'axios'
 import Edit from './Edit'
 import { makeStyles } from '@material-ui/core/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';

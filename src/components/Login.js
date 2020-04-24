@@ -12,8 +12,11 @@ import {
   MDBModalFooter,
   MDBIcon,
   MDBCardHeader,
-  MDBBtn
+  MDBBtn,
+  MDBView
 } from "mdbreact";
+
+
 
 class Login extends Component{
     constructor(props){
@@ -55,14 +58,17 @@ class Login extends Component{
 
     render(){
   return (
-    <MDBContainer>
+    <div className ="background">
+      <div className ="login">
+    
+    <MDBContainer style={{display: 'flex' , justifyContent: 'center'}}>
       <MDBRow>
-        <MDBCol md="6">
+        <MDBCol md="50">
           <MDBCard>
             <MDBCardBody>
               <MDBCardHeader className="form-header warm-flame-gradient rounded">
                 <h3 className="my-3">
-                  <MDBIcon icon="lock" /> Login:
+                  <MDBIcon icon="lock" /> Login: To ReadMe PHUKET
                 </h3>
               </MDBCardHeader>
               <label
@@ -96,6 +102,7 @@ class Login extends Component{
                 onChange={this.handleChange}
                 
               />
+             
 
               <div className="text-center mt-4">
                 <MDBBtn color="deep-orange" onClick ={this.login} className="mb-3" type="submit">
@@ -108,8 +115,8 @@ class Login extends Component{
 
               <MDBModalFooter>
                 <div className="font-weight-light">
-                  <p>Not a member? Sign Up</p>
-                  <p>Forgot Password?</p>
+                  <p>Not a member? Register</p>
+                  
                 </div>
               </MDBModalFooter>
             </MDBCardBody>
@@ -117,6 +124,9 @@ class Login extends Component{
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    </div>
+    </div>
+    
   );
 };
 }

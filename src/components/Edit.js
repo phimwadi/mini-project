@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, ListGroup, Carousel } from 'react-bootstrap';
 import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
-import { firestore } from '../index'
+
 import './Edit.css'
 
 
@@ -51,7 +50,7 @@ export default props => {
                         View : {view} <br/>
                         Detail : {detail} <br/>
                         <br />
-                        -------------------------CONTACT-------------------------<br />
+                        -------------------------ช่องทางการติดต่อ-------------------------<br />
                         TELEPHONE : {telephone} <br />
                         FACEBOOK : {facebook} <br />
                         

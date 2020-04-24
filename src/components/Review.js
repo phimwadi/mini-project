@@ -4,10 +4,10 @@ MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggle
 MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
 } from "mdbreact";
 import { TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
-import classnames from 'classnames';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { firestore } from '../index'
 import Edit from './Edit'
+import Topbar from './Topbar'
 
 
  const Review = props => {
@@ -86,24 +86,24 @@ import Edit from './Edit'
 
         return (
             <div>
+                <Topbar/>
                 
-                <MDBNavbar color="cyan" dark expand="md">
                     <MDBNavbarBrand>
-                        <strong className="white-text">กรอกข้อมูลร้านอาหาร</strong>
+                        <strong className="Black-text ">กรอกข้อมูลร้านอาหาร</strong>
                     </MDBNavbarBrand>
-                </MDBNavbar>
                 
-            <TabContent activeTab={activeTab}>
-                <TabPane tabId="1">
-                    <Row>
+                
+            <TabContent activeTab={activeTab} >
+                <TabPane tabId="1" >
+                    <Row >
                         <Col sm="12">
                             <div>
                                 <div>
-                                    <div className="col-6 mt-5 mx-auto card">
+                                    <div className="col-4 mt-5 mx-auto card  ">
                                     
                                         <form>
                                             <div className="form-group">
-                                                <label htmlFor="imgUrl1">Image 1 : รูปภาพ</label>
+                                                <label htmlFor="imgUrl1">Image  : รูปภาพ</label>
                                                 <input type="text"
                                                     name="imgUrl1"
                                                     className="form-control"
@@ -112,7 +112,7 @@ import Edit from './Edit'
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="strain">menuName</label>
+                                                <label htmlFor="strain">menuName : เมนูแนะนำ</label>
                                                 <input type="text"
                                                     name="strain"
                                                     className="form-control"
@@ -121,7 +121,7 @@ import Edit from './Edit'
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="nameUser">time</label>
+                                                <label htmlFor="nameUser">time : ช่วงเวลาเปิดร้าน</label>
                                                 <input type="text"
                                                     name="nameUser"
                                                     className="form-control"
@@ -130,7 +130,7 @@ import Edit from './Edit'
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="telephone">price</label>
+                                                <label htmlFor="telephone">price : ช่วงราคา</label>
                                                 <input type="text"
                                                     name="telephone"
                                                     className="form-control"
@@ -139,7 +139,7 @@ import Edit from './Edit'
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="facebook">landmark</label>
+                                                <label htmlFor="facebook">landmark : ที่อยู่ร้าน</label>
                                                 <input type="text"
                                                     name="facebook"
                                                     className="form-control"
@@ -148,7 +148,7 @@ import Edit from './Edit'
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="line">telephone</label>
+                                                <label htmlFor="line">telephone </label>
                                                 <input type="text"
                                                     name="line"
                                                     className="form-control"
@@ -167,7 +167,7 @@ import Edit from './Edit'
                                             </div>
                                             
                                             <div className="form-group">
-                                                <label htmlFor="line">view</label>
+                                                <label htmlFor="line">view : บรรยากาศร้าน</label>
                                                 <input type="text"
                                                     name="line"
                                                     className="form-control"
@@ -176,7 +176,7 @@ import Edit from './Edit'
                                             />
                                             </div>
                                             <div className="form-group">
-                                                <label htmlFor="line">detail</label>
+                                                <label htmlFor="line">detail : รายละเอียด</label>
                                                 <input type="text"
                                                     name="line"
                                                     className="form-control"
@@ -186,7 +186,7 @@ import Edit from './Edit'
                                             </div>
                                         </form>
                                         <div className="text-center">
-                                            <Button color="primary" style={{ margin:20, padding: 10}} onClick={addEdit}>Review</Button>
+                                            <Button color="purple" style={{ margin:20, padding: 10}} onClick={addEdit}>Review</Button>
                                         </div>
                                     </div>
 
