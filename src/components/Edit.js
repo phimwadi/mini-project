@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, ListGroup, Carousel } from 'react-bootstrap';
 import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 import { firestore } from '../index'
+import './Edit.css'
 
 
 export default props => {
@@ -28,19 +29,20 @@ export default props => {
     return (
         
         <li>
-        <div>
-            <MDBRow >
-      <MDBCol md="3">
-        <MDBCard>
-          <img
+        <div className="center">
+        <MDBRow>
+      <MDBCol style={{ maxWidth: "55rem" }}>
+        <MDBCard reverse>
+        <img
                 className="d-block w-100"
                 src={imgUrl1}
                 style={{ height: 250, width: 330 }}
             />
-          <MDBCardBody className='elegant-color white-text rounded-bottom'>
-           
+          <MDBCardBody cascade className="text-center">
+            
+            
             <MDBCardText>
-                <h3 className="white-text font-weight-light mb-1 p-0">
+                <h3 className="black-text font-weight-light mb-1 p-0">
                     <strong>
                         MenuName : {menuName} <br />
                         Time : {time} <br/>
@@ -49,7 +51,7 @@ export default props => {
                         View : {view} <br/>
                         Detail : {detail} <br/>
                         <br />
-                        -------------------------CONTACT-----------------------<br />
+                        -------------------------CONTACT-------------------------<br />
                         TELEPHONE : {telephone} <br />
                         FACEBOOK : {facebook} <br />
                         
@@ -58,6 +60,7 @@ export default props => {
                     </strong>
                 </h3>
             </MDBCardText>
+            
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

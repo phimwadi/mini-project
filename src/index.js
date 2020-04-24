@@ -8,6 +8,7 @@ import {browserHistory} from 'react-router'
 import config2 from './components/config2';
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+
 //Leaflet  
 
 if( firebase.apps.length === 0)
