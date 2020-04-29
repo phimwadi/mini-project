@@ -72,7 +72,7 @@ import Topbar from './Topbar'
 
         let id = (edit.length === 0) ? 1 : edit[edit.length - 1].id + 1
         firestore.collection("edit").doc(id + '').set({ id, imgUrl1, menuName, time, price,  landmark, telephone, facebook,  view, detail})
-        alert("You Add Finish")
+        alert("You Review Finish")
     }
 
     const [activeTab, setActiveTab] = useState('1');
